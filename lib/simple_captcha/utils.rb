@@ -14,7 +14,7 @@ module SimpleCaptcha #:nodoc
       output = `#{command}`
 
       unless [expected_outcodes].flatten.include?($?.exitstatus)
-        raise ::StandardError, "Error while running #{cmd}: #{output}"
+        raise ::StandardError, "Error while running #{cmd}: #{command} => #{output}"
       end
 
       output
